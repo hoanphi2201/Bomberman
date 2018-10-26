@@ -72,6 +72,7 @@ Xem comment ở các starter project
 *Tham khảo*:
 - Mã nguồn các starter project được tham khảo và chỉnh sửa từ [đây](https://github.com/carlosflorencio/bomberman)
 ## Start(22/10/2018)
--22/10/2018: Sử lý load được dữ liệu từ file Level[x].txt đổ vào _map[][] và lấy được các giá trị _width, _height, _level 
-từ mảng _map duyệt để nhận biết các đối tượng và thiết lập ma trận các đối tượng cho game cho game
--23/10/2018 Xử lý chức năng cho player và enemy di chuyển  
+- 22/10/2018: Sử lý load được dữ liệu từ file Level[x].txt đổ vào _map[][] và lấy được các giá trị _width, _height, _level 
+từ mảng _map duyệt để nhận biết các đối tượng và thiết lập ma trận các đối tượng cho game cho game <br/>
+- 23/10/2018 Xử lý chức năng cho player và enemy di chuyển  <br/>
+- 25/10/2018 Xử lý chức năng bomer đặt bom tại vị trí [x][y]
