@@ -77,3 +77,4 @@ từ mảng _map duyệt để nhận biết các đối tượng và thiết l�
 - 23/10/2018 Xử lý chức năng cho player và enemy di chuyển  <br/>
 - 25/10/2018 Xử lý chức năng bomer đặt bom tại vị trí [x][y]
 - 28/10/2018 Tạo thêm đối tượng enemy Doll 
+- 29/10/2018 
