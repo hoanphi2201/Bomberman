@@ -76,3 +76,4 @@ Xem comment ở các starter project
 từ mảng _map duyệt để nhận biết các đối tượng và thiết lập ma trận các đối tượng cho game cho game <br/>
 - 23/10/2018 Xử lý chức năng cho player và enemy di chuyển  <br/>
 - 25/10/2018 Xử lý chức năng bomer đặt bom tại vị trí [x][y]
+- 28/10/2018 Tạo thêm đối tượng enemy Doll 
