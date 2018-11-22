@@ -79,3 +79,4 @@ từ mảng _map duyệt để nhận biết các đối tượng và thiết l�
 - 28/10/2018 Tạo thêm đối tượng enemy Doll 
 - 29/10/2018 - 10/11/2018: hoàn thành ...
 - 11-15/11/2018: Chức năng client server để 2 người chơi với nhau
+Tạo menu cho game
