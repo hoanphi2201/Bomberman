@@ -10,31 +10,31 @@ import java.awt.*;
  */
 public class GamePanel extends JPanel {
 
-    private final Game _game;
+	private Game _game;
+	
+	public GamePanel(Frame frame) {
+		setLayout(new BorderLayout());
+		setPreferredSize(new Dimension(Game.WIDTH * Game.SCALE, Game.HEIGHT * Game.SCALE));
 
-    public GamePanel(Frame frame) {
-        setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(Game.WIDTH * Game.SCALE, Game.HEIGHT * Game.SCALE));
+		_game = new Game(frame);
 
-        _game = new Game(frame);
+		add(_game);
 
-        add(_game);
+		_game.setVisible(true);
+                
+		setVisible(true);
+		setFocusable(true);
+		
+	}
 
-        _game.setVisible(true);
-
-        setVisible(true);
-        setFocusable(true);
-
-    }
-
-    public Game getGame() {
-        return _game;
-    }
+	public Game getGame() {
+		return _game;
+	}
 
     public void changeSize() {
-        setPreferredSize(new Dimension(Game.WIDTH * Game.SCALE, Game.HEIGHT * Game.SCALE));
-        revalidate();
-        repaint();
+       setPreferredSize(new Dimension(Game.WIDTH * Game.SCALE, Game.HEIGHT * Game.SCALE));
+		revalidate();
+		repaint();
     }
-
+	
 }

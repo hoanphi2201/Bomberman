@@ -22,7 +22,6 @@ public class Screen {
 		_height = height;
 		
 		_pixels = new int[width * height];
-		
 	}
 	
 	public void clear() {
@@ -97,7 +96,38 @@ public class Screen {
 		font = new Font("Arial", Font.PLAIN, 10 * Game.SCALE);
 		g.setFont(font);
 		g.setColor(Color.yellow);
-		drawCenteredString("POINTS: " + points, getRealWidth(), getRealHeight() + (Game.TILES_SIZE * 2) * Game.SCALE, g);
+		drawCenteredString("POINTS: " + points, getRealWidth(), getRealHeight() + (Game.TILES_SIZE * 2) * Game.SCALE , g);
+                drawCenteredString("Enter To Play" , getRealWidth(), getRealHeight() + (Game.TILES_SIZE * 2) * Game.SCALE + Game.SCALE*23, g);
+	}
+        public void drawWinGame(Graphics g, int points) {
+		g.setColor(Color.black);
+		g.fillRect(0, 0, getRealWidth(), getRealHeight());
+		
+		Font font = new Font("Arial", Font.PLAIN, 20 * Game.SCALE);
+		g.setFont(font);
+		g.setColor(Color.white);
+		drawCenteredString("VICTORY", getRealWidth(), getRealHeight(), g);
+		
+		font = new Font("Arial", Font.PLAIN, 10 * Game.SCALE);
+		g.setFont(font);
+		g.setColor(Color.yellow);
+		drawCenteredString("POINTS: " + points, getRealWidth(), getRealHeight() + (Game.TILES_SIZE * 2) * Game.SCALE , g);
+                drawCenteredString("Enter To Play" , getRealWidth(), getRealHeight() + (Game.TILES_SIZE * 2) * Game.SCALE + Game.SCALE*23, g);
+	}
+        public void drawExitGame(Graphics g, int points) {
+		g.setColor(Color.black);
+		g.fillRect(0, 0, getRealWidth(), getRealHeight());
+		
+		Font font = new Font("Arial", Font.PLAIN, 20 * Game.SCALE);
+		g.setFont(font);
+		g.setColor(Color.white);
+		drawCenteredString("DO YOU WANT EXIT ?", getRealWidth(), getRealHeight(), g);
+		
+		font = new Font("Arial", Font.PLAIN, 10 * Game.SCALE);
+		g.setFont(font);
+		g.setColor(Color.yellow);
+		drawCenteredString("POINTS: " + points, getRealWidth(), getRealHeight() + (Game.TILES_SIZE * 2) * Game.SCALE , g);
+                drawCenteredString("Enter R To Resume" , getRealWidth(), getRealHeight() + (Game.TILES_SIZE * 2) * Game.SCALE + Game.SCALE*23, g);
 	}
 
 	public void drawChangeLevel(Graphics g, int level) {
@@ -110,7 +140,43 @@ public class Screen {
 		drawCenteredString("LEVEL " + level, getRealWidth(), getRealHeight(), g);
 		
 	}
-	
+	public void drawStartGame(Graphics g) {
+		g.setColor(Color.black);
+		g.fillRect(0, 0, getRealWidth(), getRealHeight());
+ 		Font font =  new Font("Times New Roman", Font.PLAIN, Game.SCALE * 30);
+		g.setFont(font);
+		g.setColor(Color.white);
+		drawCenteredString("Bomberman", getRealWidth() , getRealHeight() - Game.SCALE * 106, g);
+ 		font = new Font("Times New Roman", Font.PLAIN, 40);
+                
+                Font font1 =  new Font("Times New Roman", Font.PLAIN, Game.SCALE * 13);
+               
+ 		font = new Font("Times New Roman", Font.PLAIN, 35);
+                g.setColor(Color.WHITE);
+                g.fillRoundRect(getRealWidth() / 2 - Game.SCALE * 100 /2, Game.SCALE * 87, Game.SCALE * 100, Game.SCALE * 13, Game.SCALE * 3, Game.SCALE * 3);
+                g.setFont(font1);
+		g.setColor(Color.BLACK);
+		drawCenteredString("Start ", getRealWidth() , Game.SCALE * 186, g);
+                
+                g.setColor(Color.WHITE);
+                g.fillRoundRect(getRealWidth() / 2 - Game.SCALE * 100 /2, Game.SCALE * 106, Game.SCALE * 100, Game.SCALE * 13, Game.SCALE * 3, Game.SCALE * 3);
+                g.setFont(font1);
+		g.setColor(Color.BLACK);
+		drawCenteredString("Continue ", getRealWidth() , Game.SCALE * 225, g);
+                
+                g.setColor(Color.WHITE);
+                g.fillRoundRect(getRealWidth() / 2 - Game.SCALE * 100 /2, Game.SCALE * 124, Game.SCALE * 100, Game.SCALE * 13, Game.SCALE * 3, Game.SCALE * 3);
+                g.setFont(font1);
+		g.setColor(Color.BLACK);
+		drawCenteredString("Manual", getRealWidth() , Game.SCALE * 260, g);
+                
+                g.setColor(Color.WHITE);
+                g.fillRoundRect(getRealWidth() / 2 - Game.SCALE * 100 /2, Game.SCALE * 142, Game.SCALE * 100, Game.SCALE * 13, Game.SCALE * 3, Game.SCALE * 3);
+                g.setFont(font1);
+		g.setColor(Color.BLACK);
+		drawCenteredString("Exit ", getRealWidth() , Game.SCALE * 297, g);
+                
+	}
 	public void drawPaused(Graphics g) {
 		Font font = new Font("Arial", Font.PLAIN, 20 * Game.SCALE);
 		g.setFont(font);

@@ -4,6 +4,7 @@ import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.AnimatedEntitiy;
 import uet.oop.bomberman.graphics.Screen;
+import uet.oop.bomberman.level.Coordinates;
 
 /**
  * Bao gồm Bomber và Enemy
@@ -60,5 +61,19 @@ public abstract class Character extends AnimatedEntitiy {
 	protected double getYMessage() {
 		return (_y* Game.SCALE) - (_sprite.SIZE / 2 * Game.SCALE);
 	}
+        public double getCenterX() {
+		int pixelOfEntity = Coordinates.tileToPixel(1);
+		double centerX = _x + _sprite.getRealWidth() / 2;
+		int tileCenterX = Coordinates.pixelToTile(centerX);
+		return Coordinates.tileToPixel(tileCenterX) + pixelOfEntity / 2 - _sprite.getRealWidth() / 2;
+	}
+
+	public double getCenterY() {
+		int pixelOfEntity = Coordinates.tileToPixel(1);
+		double centerY = _y - _sprite.getRealHeight() / 2;
+		int tileCenterY = Coordinates.pixelToTile(centerY);
+		return Coordinates.tileToPixel(tileCenterY) + pixelOfEntity / 2 + _sprite.getRealHeight() / 2;
+	}
+
 	
 }

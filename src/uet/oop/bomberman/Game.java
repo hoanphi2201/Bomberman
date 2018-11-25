@@ -16,16 +16,17 @@ import java.awt.image.DataBufferInt;
 public class Game extends Canvas {
 
 	public static final int TILES_SIZE = 16,
-							WIDTH = TILES_SIZE * (31 / 2),
-							HEIGHT = 13 * TILES_SIZE;
+			WIDTH = TILES_SIZE * (31 / 2),
+                        HEIGHT = 13 * TILES_SIZE;
 
 	public static int SCALE = 3;
 	
 	public static final String TITLE = "BombermanGame";
 	
-	private static final int BOMBRATE = 1;
+	public static final int BOMBRATE = 1;
 	private static final int BOMBRADIUS = 1;
 	private static final double BOMBERSPEED = 1.0;
+        public static final int LIVES = 3;
 	
 	public static final int TIME = 200;
 	public static final int POINTS = 0;
@@ -35,6 +36,8 @@ public class Game extends Canvas {
 	protected static int bombRate = BOMBRATE;
 	protected static int bombRadius = BOMBRADIUS;
 	protected static double bomberSpeed = BOMBERSPEED;
+        public static int bombBeforeNextLevel = BOMBRATE;
+
 	
 	
 	protected int _screenDelay = SCREENDELAY;
@@ -51,6 +54,7 @@ public class Game extends Canvas {
 	private int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
 	
 	public Game(Frame frame) {
+                
 		_frame = frame;
 		_frame.setTitle(TITLE);
 		
@@ -109,8 +113,8 @@ public class Game extends Canvas {
 	}
 	
 	public void start() {
+                
 		_running = true;
-		
 		long  lastTime = System.nanoTime();
 		long timer = System.currentTimeMillis();
 		final double ns = 1000000000.0 / 60.0; //nanosecond, 60 frames per second
@@ -144,6 +148,7 @@ public class Game extends Canvas {
 			if(System.currentTimeMillis() - timer > 1000) {
 				_frame.setTime(_board.subtractTime());
 				_frame.setPoints(_board.getPoints());
+                                _frame.setLives(_board.getLives());
 				timer += 1000;
 				_frame.setTitle(TITLE + " | " + updates + " rate, " + frames + " fps");
 				updates = 0;
@@ -190,9 +195,15 @@ public class Game extends Canvas {
 	public boolean isPaused() {
 		return _paused;
 	}
-	
+	public void run() {
+		_running = true;
+		_paused = false;
+	}
 	public void pause() {
 		_paused = true;
+	}
+        public boolean isRunning() {
+		return _running;
 	}
 	
 }
